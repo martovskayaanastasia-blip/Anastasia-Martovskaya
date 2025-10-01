@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасія Мартовська - Контент-мейкер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #722F37 0%, #8B4A52 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">Martovskaya</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-200 transition-colors cursor-pointer">Головна</a>
+                    <a href="#about" class="hover:text-purple-200 transition-colors cursor-pointer">Про мене</a>
+                    <a href="#services" class="hover:text-purple-200 transition-colors cursor-pointer">Послуги</a>
+                    <a href="#contact" class="hover:text-purple-200 transition-colors cursor-pointer">Контакти</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block hover:text-purple-200 transition-colors cursor-pointer">Головна</a>
+                <a href="#about" class="block hover:text-purple-200 transition-colors cursor-pointer">Про мене</a>
+                <a href="#services" class="block hover:text-purple-200 transition-colors cursor-pointer">Послуги</a>
+                <a href="#contact" class="block hover:text-purple-200 transition-colors cursor-pointer">Контакти</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 flex items-center justify-center pulse-animation">
+                    <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M21 17V15L15 15.5V17M11 14V12C11 11.4 11.4 11 12 11S13 11.4 13 12V14C13 14.6 12.6 15 12 15S11 14.6 11 14ZM18 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2H18C19.1 2 20 2.9 20 4V20C20 21.1 19.1 22 18 22Z"/>
+                    </svg>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Привіт! Я Анастасія</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Створюю якісний контент, який надихає та залучає аудиторію. Допомагаю брендам розказати їхню історію через креативні рішення.</p>
+                <button onclick="scrollToSection('contact')" class="bg-white text-burgundy-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-50 transition-colors shadow-lg" style="color: #722F37;">
+                    Почати співпрацю
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Про мене</h2>
+                <div class="w-24 h-1 mx-auto" style="background-color: #F4E4BC;"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="w-64 h-64 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-white">
+                        <img src="https://www.dropbox.com/scl/fi/xn63s3ywao49mrj4k01kv/IMG_4394.jpeg?rlkey=cnnoszph62mkj32wjc3ufl1j2&st=5xboadm0&dl=1" alt="Анастасія Мартовська" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center" style="display: none;">
+                            <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Контент-мейкер з досвідом 5+ років</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Спеціалізуюся на створенні унікального контенту для соціальних мереж, блогів та маркетингових кампаній. 
+                        Моя мета - допомогти брендам знайти свій голос та побудувати міцні зв'язки з аудиторією.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 rounded-lg" style="background-color: #F9F6E8;">
+                            <div class="text-3xl font-bold" style="color: #722F37;">150+</div>
+                            <div class="text-gray-600">Задоволених клієнтів</div>
+                        </div>
+                        <div class="text-center p-4 rounded-lg" style="background-color: #F9F6E8;">
+                            <div class="text-3xl font-bold" style="color: #722F37;">0</div>
+                            <div class="text-gray-600">Негативних відгуків</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Мої послуги</h2>
+                <div class="w-24 h-1 mx-auto mb-6" style="background-color: #F4E4BC;"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Пропоную повний спектр послуг для створення та просування вашого контенту</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background-color: #F9F6E8;">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style="color: #722F37;">
+                            <path d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Відеоконтент</h3>
+                    <p class="text-gray-600 mb-6">Створення якісних відео для соціальних мереж, реклами та презентацій</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Рекламні ролики</li>
+                        <li>• Контент для Instagram/TikTok</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background-color: #F9F6E8;">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style="color: #722F37;">
+                            <path d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Графічний дизайн</h3>
+                    <p class="text-gray-600 mb-6">Розробка візуального контенту та брендингу для вашого бізнесу</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Логотипи та фірмовий стиль</li>
+                        <li>• Пости для соцмереж</li>
+                        <li>• Банери та флаєри</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background-color: #F9F6E8;">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style="color: #722F37;">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Копірайтинг</h3>
+                    <p class="text-gray-600 mb-6">Написання текстів, що продають та залучають вашу аудиторію</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Пости в соцмережах</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Зв'яжіться зі мною</h2>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Готова обговорити ваш проект та створити щось неймовірне разом</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Напишіть мені</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <input type="text" id="name" placeholder="Ваше ім'я" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50">
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="Ваш email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50">
+                        </div>
+                        <div>
+                            <textarea id="message" rows="5" placeholder="Розкажіть про ваш проект" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white px-8 py-4 rounded-lg font-semibold transition-colors" style="color: #722F37;" onmouseover="this.style.backgroundColor='#F9F6E8'" onmouseout="this.style.backgroundColor='white'">
+                            Відправити повідомлення
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Контактна інформація</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Instagram</div>
+                                <div class="opacity-90">@_martovskaya_</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Telegram</div>
+                                <div class="opacity-90">@mart0vskaya97</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Локація</div>
+                                <div class="opacity-90">Світловодськ, Україна</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Соціальні мережі</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://instagram.com/_martovskaya_" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/mart0vskaya97" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Martovskaya. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click handlers to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Simulate form submission
+                alert('Дякую за повідомлення! Я зв\'яжуся з вами найближчим часом.');
+                this.reset();
+            }
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'987b4b4793ab77c1',t:'MTc1OTMxNDcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
